@@ -21,7 +21,6 @@ for archivo in os.listdir(CARPETA):
 
         print(f"Imprimiendo {archivo}…")
         try:
-            # /t = print silently to default printer
             subprocess.run([ADOBE, "/t", origen], check=True)
         except Exception as e:
             print(f"  ¡Se abre el reader!: {e}")
@@ -31,5 +30,9 @@ for archivo in os.listdir(CARPETA):
         time.sleep(1)  
         print(f"Moviendo {archivo} a 'procesados'…")
         shutil.move(origen, destino)
+
+# Disclaimer!
+#I was having trouble with Adobe, so I used GPT to automate the printing process (I didn't know the Adobe commands). 
+#In the future, I plan to switch to a different PDF reader, since Adobe runs a bit slowly on my older work computer. It's useful, but unfortunately quite heavy for my current setup.
 
 # This is one of my first contributions at work. I´m so proud of this, because is a little script that help us to have less fails in general at work. 
