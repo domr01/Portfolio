@@ -13,20 +13,21 @@
 
 
 
-import os
-import shutil
-import time
-import subprocess
+    import os
+    import shutil
+    import time
+    import subprocess
 
-CARPETA = r"C:\Users\tarmoa\Desktop\Impresion"
-ADOBE = r"C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe"
+    CARPETA = r"C:\Users\tarmoa\Desktop\Impresion"
+    ADOBE = r"C:\Program Files\Adobe\Acrobat DC\Acrobat\Acrobat.exe"
 
-for archivo in os.listdir(CARPETA):
-    if archivo.lower().endswith(".pdf"):
-        print(f"Imprimiendo {archivo}…")
-        try:
+    for archivo in os.listdir(CARPETA):
+        if archivo.lower().endswith(".pdf"):
+            print(f"Imprimiendo {archivo}…")
+            try:
             subprocess.run([ADOBE, "/t", origen], check=True)
-        except Exception as e:
-            continue
+            except Exception as e:
+                continue
 
-        time.sleep(1)  
+            time.sleep(1)
+    
